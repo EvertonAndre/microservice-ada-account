@@ -5,9 +5,9 @@ import lombok.Getter;
 @Getter
 public enum AccountDateTypeValues {
 
-    OPEENINGDATE ("Data de abertura"),
-    CLOSINGDATE ("Data de fechamento"),
-    BLOCKINGDATE ("Data de bloqueio");
+    OPEENING_DATE ("Data de abertura"),
+    CLOSING_DATE ("Data de fechamento"),
+    BLOCKING_DATE ("Data de bloqueio");
 
     private String value;
 
