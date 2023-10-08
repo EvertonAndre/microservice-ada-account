@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 public class AccountInvolvement {
 
-    private AccountInvolvementTypeValues accountInvolvement;
-  //  private Account accountReference; //criar classe Account
-  // private Party partyReference; //nao to conseguindo importar a classe party do outro MS, apesar de ter colocado no pom
+      private AccountInvolvementTypeValues accountInvolvement;
+      private Account accountReference; //criar classe Account
+      private Party partyReference; //nao to conseguindo importar a classe party do outro MS, apesar de ter colocado no pom
 }
