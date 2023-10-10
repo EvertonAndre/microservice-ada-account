@@ -1,6 +1,8 @@
 package com.ada.modulo5.account.model;
 
 import com.ada.modulo5.account.Enum.AccountInvolvementTypeValues;
+
+import br.com.ada.party.model.Party;
 import jakarta.persistence.Entity;
 import lombok.Data;
 
