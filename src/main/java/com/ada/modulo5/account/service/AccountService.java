@@ -35,8 +35,8 @@ public class AccountService {
                 account.get().setAccountDate(acc.getAccountDate());
                 account.get().setAccountType(acc.getAccountType());
                 account.get().setAccountPurpose(acc.getAccountPurpose());
-                account.get().setAccountBalance(acc.getAccountBalance());
-                account.get().setAccountCurrency(acc.getAccountCurrency());
+               // account.get().setAccountBalance(acc.getAccountBalance());
+                //account.get().setAccountCurrency(acc.getAccountCurrency());
                 account.get().setAccountDescription(acc.getAccountDescription());
                 return accountRepository.save(account.get());
             }else{

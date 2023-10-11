@@ -1,40 +1,43 @@
 package com.ada.modulo5.account.model;
 
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
+import lombok.ToString;
 
 @Entity
 @Data
+@ToString
 public class Account {
 
-    @Id
-    @GeneratedValue
-    private Long id;
+	@Id
+	@GeneratedValue
+	private Long id;
 
-    @Column(columnDefinition = "AC_IDENTIFICATION")
-    private AccountIdentification accountIdentification;
+	@Column(columnDefinition  = "AC_IDENTIFICATION")
+	private AccountIdentification accountIdentification;
 
-    @Column(columnDefinition = "AC_STATUS")
-    private AccountStatus accountStatus;
+	@Column(columnDefinition  = "AC_STATUS")
+	private AccountStatus accountStatus;
 
-    @Column(columnDefinition = "AC_DATE")
-    private AccountDate accountDate;
+	@OneToMany
+	private Set<AccountDate> accountDate;
 
-    @Column(columnDefinition = "AC_TYPE")
-    private AccountType accountType;
+	private AccountType accountType;
 
-    @Column(columnDefinition = "AC_PURPOSE")
-    private String accountPurpose;
+	private String accountPurpose;
 
-    @Column(columnDefinition = "AC_BALANCE")
-    private AccountBalance accountBalance;
+	@OneToMany
+	private Set<AccountBalance> accountBalances;
 
-    @Column(columnDefinition = "AC_CURRENCY")
-    private AccountCurrency accountCurrency;
+	@OneToMany
+	private Set<AccountCurrency> accountCurrency;
 
-    @Column(columnDefinition = "AC_DESCRIPTION")
-    private String accountDescription;
+	private String accountDescription;
 }
