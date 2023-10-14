@@ -2,12 +2,7 @@ package com.ada.modulo5.account.model;
 
 import java.util.Set;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.ToString;
 
@@ -20,15 +15,19 @@ public class Account {
 	@GeneratedValue
 	private Long id;
 
-	@Column(columnDefinition  = "AC_IDENTIFICATION")
+	@OneToOne
+	@JoinColumn(name = "AC_IDENTIFICATION")
 	private AccountIdentification accountIdentification;
 
-	@Column(columnDefinition  = "AC_STATUS")
+	@OneToOne
+	@JoinColumn(name  = "AC_STATUS")
 	private AccountStatus accountStatus;
 
 	@OneToMany
 	private Set<AccountDate> accountDate;
 
+	@OneToOne
+	@JoinColumn(name = "accountType")
 	private AccountType accountType;
 
 	private String accountPurpose;

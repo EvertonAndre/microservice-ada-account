@@ -1,8 +1,6 @@
 package com.ada.modulo5.account.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDate;
@@ -14,6 +12,8 @@ public class AccountEntry {
     @GeneratedValue
     private Long id;
     private Double accountEntryAmount; //era pra ser do tipo amount, nao ecnontrei no diagrama
+    @OneToOne
+    @JoinColumn(name = "accountEntryCurrency")
     private AccountCurrency accountEntryCurrency;
     private String accountEntryPurpose;
     private LocalDate accountEntryValueDate;

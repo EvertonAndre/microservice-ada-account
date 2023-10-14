@@ -1,9 +1,7 @@
 package com.ada.modulo5.account.model;
 
 import com.ada.modulo5.account.Enum.AccountRelationShipTylesValues;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
@@ -13,7 +11,11 @@ public class AccountRelationship {
     @GeneratedValue
     private Long id;
     private AccountRelationShipTylesValues accountRelationshipType;
+    @OneToOne
+    @JoinColumn(name = "fromAccount")
     private Account fromAccount;
+    @OneToOne
+    @JoinColumn(name = "toAccount")
     private Account toAccount;
 
 }
